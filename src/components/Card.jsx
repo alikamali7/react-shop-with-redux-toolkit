@@ -3,7 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { TbListDetails, TbShoppingBagCheck } from "react-icons/tb";
 import { MdDeleteOutline } from "react-icons/md";
 
-import { addItem, decrease, increase, removeItem } from "../features/cart/cartSlice";
+import {
+  addItem,
+  decrease,
+  increase,
+  removeItem,
+} from "../features/cart/cartSlice";
 import { productQuantity, shortenText } from "../helpers/helper";
 
 import styles from "./Card.module.css";
@@ -12,8 +17,7 @@ function Card({ data }) {
   const { id, title, image, price } = data;
 
   const state = useSelector((store) => store.cart);
-  const dispatch = useDispatch()
-  console.log(state);
+  const dispatch = useDispatch();
 
   const quantity = productQuantity(state, id);
 

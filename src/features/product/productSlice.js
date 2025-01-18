@@ -19,7 +19,7 @@ const productsSlice = createSlice({
       state.loading = true;
     });
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      state.loading = true;
+      state.loading = false;
       state.products = action.payload;
       state.error = "";
     });
